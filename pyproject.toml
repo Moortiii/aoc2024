@@ -1,0 +1,32 @@
+[project]
+name = "advent-of-code"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest-watcher>=0.4.3",
+    "pytest>=8.3.3",
+]
+
+[tool.pytest-watcher]
+now = true
+clear = true
+delay = 0.2
+runner = "pytest"
+runner_args = ["-s", "-vv"]
+patterns = ["*.py"]
+ignore_patterns = []
+
+[tool.uv.sources]
+lib = { workspace = true }
+
+[tool.uv.workspace]
+members = ["lib"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["lib"]
