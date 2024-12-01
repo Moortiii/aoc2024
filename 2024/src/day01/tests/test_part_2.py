@@ -1,7 +1,7 @@
 import os
 import pathlib
 import pytest
-
+from lib.src.parsing import read_lines
 from ..part_2 import solve
 
 dir_path = pathlib.Path(os.path.dirname(os.path.realpath(__file__))).parent / "input"
@@ -15,8 +15,12 @@ def test_solve_part_2():
     # Verify that examples succeed before running on actual input
     for example in examples:
         filename, expected_example_output = example
-
         input_file = dir_path / "part_2" / filename
+
+        lines = read_lines(input_file=input_file)
+        if not lines:
+            continue
+
         initial_solution__example_output = solve(input_file=input_file)
 
         # Don't print output unecessarily before solver has been written

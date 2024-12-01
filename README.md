@@ -8,7 +8,7 @@
 - [x] Get output from tests
 - [x] Only run on puzzle input if examples are succeeding
 - [x] Support multiple task examples
-- [ ] Check if examples have content before running them
+- [x] Check if examples have content before running them
 - [ ] Script the creation of template for a given year and day
 - [ ] Fetch puzzle output automatically
 - [ ] Countdown until task is ready for fetching
