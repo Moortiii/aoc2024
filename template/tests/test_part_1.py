@@ -1,7 +1,10 @@
 import os
 import pathlib
+
 import pytest
+
 from lib.src.parsing import read_lines
+
 from ..part_1 import solve
 
 dir_path = pathlib.Path(os.path.dirname(os.path.realpath(__file__))).parent / "input"
@@ -33,7 +36,7 @@ def test_solve_part_1():
         # solution for all of the examples
         if pathlib.Path(dir_path.parent / "part_1_cleaned.py").exists():
             from ..part_1_cleaned import solve as solve_clean
-            
+
             cleaned_solution__example_output = solve_clean(input_file=input_file)
             assert (
                 cleaned_solution__example_output == initial_solution__example_output
@@ -53,4 +56,3 @@ def test_solve_part_1():
         assert (
             cleaned_solution_output == initial_solution_output
         ), "Output from cleaned up solution does not match initial solution"
-    
