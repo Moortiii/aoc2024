@@ -1,6 +1,8 @@
 import os
 import pathlib
+
 import pytest
+
 from ..lib.parsing import read_lines
 from ..part_2 import solve
 
@@ -42,7 +44,7 @@ def test_solve_part_2():
         assert initial_solution__example_output == expected_example_output
 
     initial_solution_output = solve(dir_path / "part_2" / "input.txt")
-    print("\nPart 1 solution:", initial_solution_output)
+    print("\nPart 2 solution:", initial_solution_output)
 
     # If we have a cleaned up version, ensure that the output matches our initial
     # solution for the full puzzle input
