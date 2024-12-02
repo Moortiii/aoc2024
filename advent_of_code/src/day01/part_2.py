@@ -1,6 +1,7 @@
 import re
 from collections import defaultdict
-from lib.src.parsing import read_lines
+
+from .lib.parsing import read_lines
 
 
 def solve(input_file: str):

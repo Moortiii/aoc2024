@@ -1,6 +1,7 @@
 import re
-from collections import Counter
-from lib.src.parsing import read_lines
+
+from .lib.parsing import read_lines
+
 
 def solve(input_file: str):
     lines = read_lines(input_file)
@@ -9,7 +10,6 @@ def solve(input_file: str):
     for line in lines:
         a, b = re.sub(string=line, pattern=r"\s+", repl=" ").split()
         left.append(int(a))
-        right.append(int(b)) 
+        right.append(int(b))
 
-    counter = Counter(right)
-    return sum([num*counter[num] for num in left])
+    return sum([abs(a - b) for a, b in zip(sorted(left), sorted(right))])

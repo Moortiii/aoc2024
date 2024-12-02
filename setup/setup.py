@@ -116,7 +116,7 @@ async def setup():
         sys.exit(0)
 
     date = f"{str(args.day).zfill(2)}"
-    directory = f"{str(args.year)}/src/day{date}"
+    directory = f"advent_of_code/src/day{date}"
 
     if pathlib.Path(directory).is_dir():
         logger.warning(f"Project already exists at {directory}, not overwriting...")
@@ -140,7 +140,7 @@ async def setup():
     if not args.no_code:
         start_vscode(pathlib.Path(directory))
 
-    subprocess.run(f"./run.sh {args.year} {date}", shell=True)
+    subprocess.run(f"./run.sh {date}", shell=True)
 
 
 if __name__ == "__main__":

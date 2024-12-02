@@ -1,5 +1,8 @@
 import re
-from lib.src.parsing import read_lines
+from collections import Counter
+
+from .lib.parsing import read_lines
+
 
 def solve(input_file: str):
     lines = read_lines(input_file)
@@ -10,4 +13,5 @@ def solve(input_file: str):
         left.append(int(a))
         right.append(int(b))
 
-    return sum([abs(a-b) for a,b in zip(sorted(left), sorted(right))])
+    counter = Counter(right)
+    return sum([num * counter[num] for num in left])

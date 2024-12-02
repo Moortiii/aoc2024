@@ -3,8 +3,7 @@ import pathlib
 
 import pytest
 
-from lib.src.parsing import read_lines
-
+from ..lib.parsing import read_lines
 from ..part_1 import solve
 
 dir_path = pathlib.Path(os.path.dirname(os.path.realpath(__file__))).parent / "input"

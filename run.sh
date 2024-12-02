@@ -1,2 +1,2 @@
 #!/bin/bash
-uv run ptw --now --clear --patterns *.py,*.txt $1/src/day$2 $1/src/day$2 -vv -s
+uv run ptw --now --clear --patterns *.py,*.txt advent_of_code/src/day$1 advent_of_code/src/day$1 -vv -s

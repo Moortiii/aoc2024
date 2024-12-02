@@ -1,5 +1,7 @@
 import re
-from lib.src.parsing import read_lines
+
+from .lib.parsing import read_lines
+
 
 def solve(input_file: str):
     lines = read_lines(input_file)
@@ -18,6 +20,6 @@ def solve(input_file: str):
     dsts = []
 
     for a, b in zip(left_nums, right_nums):
-        dsts.append(abs(a-b))
+        dsts.append(abs(a - b))
 
     return sum(dsts)
