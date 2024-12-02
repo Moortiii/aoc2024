@@ -106,14 +106,23 @@ async def setup():
         action="store_true",
     )
 
+    parser.add_argument(
+        "-b",
+        "--no-block",
+        default=False,
+        help="Run without waiting for execution. Default: false",
+        action="store_true",
+    )
+
     args = parser.parse_args()
 
-    try:
-        # Wait until 06:00:00 Europe/Oslo time
-        block_execution(year=int(args.year), day=int(args.day), hours=6, minutes=0)
-    except KeyboardInterrupt:
-        logger.info("Exiting... ")
-        sys.exit(0)
+    if not args.no_block:
+        try:
+            # Wait until 06:00:00 Europe/Oslo time
+            block_execution(year=int(args.year), day=int(args.day), hours=6, minutes=0)
+        except KeyboardInterrupt:
+            logger.info("Exiting... ")
+            sys.exit(0)
 
     date = f"{str(args.day).zfill(2)}"
     directory = f"advent_of_code/src/day{date}"
